@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fast Car MR - لوحة الإدارة</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet (OpenStreetMap) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">🚗</span>
+    <div>
+      <div class="title">Fast Car MR</div>
+      <div class="subtitle">لوحة الإدارة - إنشاء مشوار</div>
+    </div>
+  </div>
+
+  <a class="linkBtn" href="captain.html">واجهة الكابتن</a>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2>إنشاء مشوار</h2>
+
+    <div class="grid2">
+      <div class="field">
+        <label for="custName">اسم الزبون</label>
+        <input id="custName" type="text" placeholder="مثال: Fatimetou" />
+      </div>
+
+      <div class="field">
+        <label for="custPhone">رقم الزبون</label>
+        <input id="custPhone" type="tel" placeholder="مثال: 32504394" inputmode="tel" />
+      </div>
+    </div>
+
+    <div class="note">
+      <b>اختيار المواقع:</b>
+      اضغط على الخريطة لاختيار <b>الانطلاق</b> ثم اضغط مرة ثانية لاختيار <b>الوجهة</b>.
+      (تقدر تضغط زر “تصفير” لإعادة الاختيار)
+    </div>
+
+    <div class="mapWrap">
+      <div id="mapAdmin" class="map"></div>
+      <div class="mapInfo">
+        <div><span class="k">الانطلاق:</span> <span id="pickupTxt">غير محدد</span></div>
+        <div><span class="k">الوجهة:</span> <span id="dropoffTxt">غير محدد</span></div>
+        <div><span class="k">المسافة:</span> <span id="distanceTxt">—</span></div>
+        <div><span class="k">السعر:</span> <span id="priceTxt">900 أوقية قديمة</span></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="resetMapBtn" class="btn ghost" type="button">تصفير المواقع</button>
+      <button id="createTripBtn" class="btn primary" type="button">إرسال الطلب</button>
+    </div>
+
+    <div class="smallHint">
+      * الآن الحفظ يتم على نفس الجهاز (LocalStorage). للنظام الحقيقي (كباتن متعددين) نربطه بقاعدة بيانات مثل Supabase.
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <h2>كورسات اليوم</h2>
+      <div class="rowBtns">
+        <button id="exportBtn" class="btn ghost" type="button">تصدير JSON</button>
+        <button id="clearAllBtn" class="btn danger ghost" type="button">حذف الكل</button>
+      </div>
+    </div>
+
+    <div id="emptyAdmin" class="empty">لا يوجد طلبات بعد.</div>
+    <div id="tripsAdmin" class="list"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <small>Fast Car MR • v1 • Ouguiya (Old) = 900 ثابت</small>
+</footer>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
