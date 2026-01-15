@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fast Car MR - واجهة الكابتن</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">🧑‍✈️</span>
+    <div>
+      <div class="title">Fast Car MR</div>
+      <div class="subtitle">واجهة الكابتن</div>
+    </div>
+  </div>
+
+  <a class="linkBtn" href="index.html">لوحة الإدارة</a>
+</header>
+
+<main class="container">
+  <section class="card">
+    <div class="row">
+      <h2>طلبات جديدة</h2>
+      <button id="refreshCaptainBtn" class="btn ghost" type="button">تحديث</button>
+    </div>
+
+    <div id="emptyCaptain" class="empty">لا يوجد طلبات متاحة الآن.</div>
+    <div id="tripsCaptain" class="list"></div>
+  </section>
+
+  <section class="card">
+    <h2>الخريطة</h2>
+    <div id="mapCaptain" class="map"></div>
+    <div class="smallHint">اضغط على أي طلب لعرضه على الخريطة.</div>
+  </section>
+</main>
+
+<footer class="footer">
+  <small>Fast Car MR • Captain UI</small>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
