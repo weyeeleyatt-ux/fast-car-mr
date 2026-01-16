@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fast Car MR - الكابتن</title>
+  <title>Fast Car MR - واجهة الكابتن</title>
 
   <link rel="icon" type="image/png" href="favicon-32.png">
   <link rel="apple-touch-icon" href="fastcar-icon-192.png">
@@ -32,16 +32,19 @@
 
   <!-- Login Gate -->
   <section id="lockBox" class="card lock">
-    <h2>تسجيل دخول</h2>
-    <p class="muted">ادخل كلمة السر للدخول.</p>
+    <h2>تسجيل دخول الكابتن</h2>
+    <p class="muted">ادخل كلمة السر الخاصة بالكباتن.</p>
+
     <div class="field">
       <label>كلمة السر</label>
       <input id="passInput" type="password" placeholder="••••••••••">
     </div>
+
     <button id="loginBtn" class="btn primary" type="button">دخول</button>
     <div id="lockMsg" class="msg" style="display:none;"></div>
   </section>
 
+  <!-- Captain App -->
   <section id="captainApp" class="card" style="display:none;">
     <div class="headRow">
       <h2>مشاوير متوفرة</h2>
@@ -50,9 +53,10 @@
 
     <div class="grid">
       <div class="field">
-        <label>اسم الكابتن (اختياري)</label>
+        <label>اسم الكابتن (مهم للقبول)</label>
         <input id="captainName" type="text" placeholder="مثال: Captain Ahmed">
       </div>
+
       <div class="field">
         <label>عرض</label>
         <select id="capView" class="select">
@@ -67,7 +71,7 @@
     <div id="captainTrips" class="list"></div>
 
     <div class="smallHint">
-      * هذه نسخة محلية على نفس الجهاز.
+      * ملاحظة: هذه النسخة تعمل محلياً على نفس الجهاز (LocalStorage).
     </div>
   </section>
 
@@ -75,6 +79,6 @@
 
 <div id="toast" class="toast" style="display:none;"></div>
 
-<script src="app.js"></script>
+<script src="captain.js"></script>
 </body>
 </html>
