@@ -3,49 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fast Car MR - واجهة الكابتن</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Fast Car MR - الكابتن</title>
 
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="icon" type="image/png" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="fastcar-icon-192.png">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <header class="topbar">
   <div class="brand">
-    <span class="logo">🧑‍✈️</span>
-    <div>
-      <div class="title">Fast Car MR</div>
-      <div class="subtitle">واجهة الكابتن</div>
+    <img class="brandLogo" src="fastcar-logo.png" alt="Fast Car MR">
+    <div class="brandText">
+      <div class="brandTitle">Fast Car MR</div>
+      <div class="brandSub">واجهة الكابتن</div>
     </div>
   </div>
 
-  <a class="linkBtn" href="index.html">لوحة الإدارة</a>
+  <div class="topActions">
+    <a class="pill" href="index.html">الإدارة</a>
+    <button id="logoutBtn" class="pill ghost" type="button">خروج</button>
+  </div>
 </header>
 
-<main class="container">
-  <section class="card">
-    <div class="row">
-      <h2>طلبات جديدة</h2>
-      <button id="refreshCaptainBtn" class="btn ghost" type="button">تحديث</button>
+<main class="wrap">
+
+  <!-- Login Gate -->
+  <section id="lockBox" class="card lock">
+    <h2>تسجيل دخول</h2>
+    <p class="muted">ادخل كلمة السر للدخول.</p>
+    <div class="field">
+      <label>كلمة السر</label>
+      <input id="passInput" type="password" placeholder="••••••••••">
+    </div>
+    <button id="loginBtn" class="btn primary" type="button">دخول</button>
+    <div id="lockMsg" class="msg" style="display:none;"></div>
+  </section>
+
+  <section id="captainApp" class="card" style="display:none;">
+    <div class="headRow">
+      <h2>مشاوير متوفرة</h2>
+      <button id="refreshBtn" class="btn ghost small" type="button">تحديث</button>
     </div>
 
-    <div id="emptyCaptain" class="empty">لا يوجد طلبات متاحة الآن.</div>
-    <div id="tripsCaptain" class="list"></div>
+    <div class="grid">
+      <div class="field">
+        <label>اسم الكابتن (اختياري)</label>
+        <input id="captainName" type="text" placeholder="مثال: Captain Ahmed">
+      </div>
+      <div class="field">
+        <label>عرض</label>
+        <select id="capView" class="select">
+          <option value="available">متوفر فقط</option>
+          <option value="mine">مشاويري</option>
+          <option value="all">الكل</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="emptyCaptain" class="empty">لا يوجد مشاوير متوفرة الآن.</div>
+    <div id="captainTrips" class="list"></div>
+
+    <div class="smallHint">
+      * هذه نسخة محلية على نفس الجهاز.
+    </div>
   </section>
 
-  <section class="card">
-    <h2>الخريطة</h2>
-    <div id="mapCaptain" class="map"></div>
-    <div class="smallHint">اضغط على أي طلب لعرضه على الخريطة.</div>
-  </section>
 </main>
 
-<footer class="footer">
-  <small>Fast Car MR • Captain UI</small>
-</footer>
+<div id="toast" class="toast" style="display:none;"></div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
