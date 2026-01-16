@@ -32,12 +32,14 @@
 
   <!-- Login Gate -->
   <section id="lockBox" class="card lock">
-    <h2>تسجيل دخول</h2>
-    <p class="muted">ادخل كلمة السر للدخول.</p>
+    <h2>تسجيل دخول الإدارة</h2>
+    <p class="muted">ادخل كلمة سر الإدارة.</p>
+
     <div class="field">
       <label>كلمة السر</label>
       <input id="passInput" type="password" placeholder="••••••••••">
     </div>
+
     <button id="loginBtn" class="btn primary" type="button">دخول</button>
     <div id="lockMsg" class="msg" style="display:none;"></div>
   </section>
@@ -88,7 +90,7 @@
     </div>
 
     <div class="smallHint">
-      * هذه نسخة محلية على نفس الجهاز. للنظام الحقيقي (عدة كباتن/أجهزة) نربطه بـ Supabase.
+      * هذه نسخة محلية على نفس الجهاز (LocalStorage).
     </div>
   </section>
 
@@ -116,6 +118,6 @@
 
 <div id="toast" class="toast" style="display:none;"></div>
 
-<script src="app.js"></script>
+<script src="admin.js"></script>
 </body>
 </html>
