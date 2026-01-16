@@ -33,12 +33,13 @@ body{
   gap:10px;
 }
 .brandLogo{
-  width:42px;
-  height:42px;
-  border-radius: 12px;
+  width:64px;
+  height:64px;
+  border-radius: 14px;
   background: rgba(255,255,255,.12);
-  padding: 6px;
+  padding: 8px;
   object-fit: contain;
+}
 }
 .brandTitle{font-weight:800; font-size:18px; line-height:1}
 .brandSub{font-size:12px; opacity:.92}
